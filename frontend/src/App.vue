@@ -163,6 +163,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { translations } from './locales/translations.js'
+import { getApiUrl } from './config/api.js'
 import Navbar from './components/Navbar.vue'
 import HeroSection from './components/HeroSection.vue'
 import TrendingCarousel from './components/TrendingCarousel.vue'
@@ -1045,7 +1046,7 @@ const fetchLiveExchangeRate = async () => {
 
   // Fallback to backend API
   try {
-    const backendRes = await fetch('/api/exchange-rate')
+    const backendRes = await fetch(getApiUrl('/api/exchange-rate'))
     if (backendRes.ok) {
       const bData = await backendRes.json()
       if (bData && bData.rate) {
@@ -1059,7 +1060,7 @@ const fetchLiveExchangeRate = async () => {
 
 const fetchPlacesFromBackend = async () => {
   try {
-    const res = await fetch('/api/places')
+    const res = await fetch(getApiUrl('/api/places'))
     if (res.ok) {
       const result = await res.json()
       if (result && result.data && result.data.length > 0) {
