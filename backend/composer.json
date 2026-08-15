@@ -1,0 +1,22 @@
+{
+    "name": "laravel/batam-crossborder-tourism-backend",
+    "type": "project",
+    "description": "Laravel 11 RESTful API with PostgreSQL PostGIS for SG-Batam Cross-Border Tourism Platform",
+    "keywords": ["laravel", "framework", "postgis", "postgresql", "medical-tourism"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0",
+        "laravel/sanctum": "^4.0",
+        "laravel/tinker": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
